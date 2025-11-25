@@ -55,20 +55,20 @@ function startDailyReminder(client, channelId) {
 
             const streak = loadStreak();
 
-            if (confirmation.customId === 'confirm') {
+            if (confirmation.customId === 'cancel') {
                 streak.days += 1;
                 saveStreak(streak);
 
                 await confirmation.update({
-                    content: `<@${process.env.NATAN_ID}> está há ${streak.days} dia(s) fazendo Live Code do Kuken! 🔥`,
+                    content: `<@${process.env.NATAN_ID}> está há ${streak.days} dia(s) fazendo Live Code do Zarabatel! 🔥`,
                     components: [],
                 });
-            } else if (confirmation.customId === 'cancel') {
+            } else if (confirmation.customId === 'confirm') {
                 streak.days = 0;
                 saveStreak(streak);
 
                 await confirmation.update({
-                    content: `<@${process.env.NATAN_ID}> perdeu o streak de Live Code do Kuken 😢`,
+                    content: `<@${process.env.NATAN_ID}> perdeu o streak de Live Code do Zarabatel 😢`,
                     components: [],
                 });
             }
